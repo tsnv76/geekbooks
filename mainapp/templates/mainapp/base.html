@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            {{ title|title }}
+        {% endblock %}}
+    </title>
+    {% block css %}
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+    {% endblock %}
+    {% block js %}
+    {% endblock %}
+</head>
+<body>
+<div id="wrapper">
+    {% block menu %}
+        <div id="header">
+				<a href="#"><img src="{% static 'images/logo.png' %}" width="120" alt="Logo" id="logo" /></a>
+				<ul id="nav">
+					<li class="active"><a href="/">Home</a></li>
+					<li><a href="{% url 'products' %}">Каталог</a></li>
+					<li><a href="#">How It Works</a></li>
+					<li><a href="#">Login</a></li>
+					<li><a href="#">Join Now</a></li>
+				</ul>
+        </div>
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% block footer %}
+    <div id="footer">
+        <div class="f-left"><img src="{% static 'images/cc.gif' %}" alt="Creative Commons"/></div>
+        <div class="f-right">Design by <a href="http://fearlessflyer.com">Fearlessflyer.com</a>. Coded by <a
+                href="http://www.themelab.com">Theme Lab</a></div>
+    </div>
+    {% endblock %}
+</div>
+</body>
+</html>
