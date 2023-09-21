@@ -6,7 +6,7 @@ def main(request):
 
 
 def products(request):
-    return render(request, 'mainapp/shop-list.html')
+    return render(request, 'mainapp/products.html')
 
 
 def contact(request):
